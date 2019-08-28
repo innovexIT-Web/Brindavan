@@ -35,15 +35,6 @@ app.config(function ($routeProvider) {
         .when("/blockResident", {
             templateUrl: "views/blockResident.html"
         })
-        .when("/sign", {
-            templateUrl: "sign.html"
-        })
-        .when("/form", {
-            templateUrl: "form.html"
-        })
-        .when("/welcome", {
-            templateUrl: "welcome.html"
-        })
         .when("/registerFamilyMember", {
             templateUrl: "views/registerFamilyMember.html"
         });
