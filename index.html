@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Brindabon </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+
+    <script type="text/javascript" src="js/jquery.js"> </script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+    <script type="text/javascript" src="js/bootstrap.min.js"> </script>
+    <script type="text/javascript" src="js/angular.min.js"> </script>
+    <script type="text/javascript" src="js/angular-route.min.js"> </script>
+    <script type="text/javascript" src="js/route.js"> </script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body style="font-family: ubuntu;" ng-app="myApp">
+
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: rgb(182, 188, 194);">
+        <a href="#/!" class="navbar-brand active">
+            <kbd>brindavan</kbd>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- <span style="padding-right: 30px;"></span> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#!noticeBoard">
+                        <i class="d-lg-none mr-2"> <img style="width: 30px; height:30px;" src="resources/logos/noticeBoard.png"></i>NoticeBoard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!vechicleLog">
+                        <i class="d-lg-none mr-1"> <img style="width: 30px; height:30px;" src="resources/logos/car.png"></i> VehicleLog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!familyMembers">
+                            <i class="d-lg-none mr-2"> <img style="width: 30px; height:30px;" src="resources/logos/family-silhouette.png"></i>FamilyMembers</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#!residentDirectory" class="nav-link">
+                            <i class="d-lg-none mr-1"> <img style="width: 30px; height:30px;" src="resources/logos/resident.png"></i>
+                            ResidentDirectory
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#!dailyHelps" class="nav-link">
+                            <i class="d-lg-none mr-1"> <img style="width: 30px; height:30px;" src="resources/logos/calendar.png"></i>
+                        DailyHelps
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#!communicate" class="nav-link">
+                        <i class="d-lg-none mr-1"> <img style="width: 30px; height:30px;" src="resources/logos/telephone.png"></i>
+                        CommunicateGate
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#!hireNewHelp" class="nav-link">
+                            <i class="d-lg-none mr-1"> <img style="width: 30px; height:30px;" src="resources/logos/hireNewHelp.png"></i>
+                        HireNewHelp
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#!sos" class="nav-link">
+                            <i class="d-lg-none mr-1"> <img style="width: 30px; height:30px;" src="resources/logos/sos.png"></i>
+                        SOS
+                    </a>
+                </li>
+            </ul>
+
+            <form class="form-inline mt-0 ml-auto">
+                <div class="input-group">
+                    <input type="search" class="form-control form-control-sm bg-light" style="color: rgb(6, 6, 7);"
+                        placeholder="Search">
+                    <div class="input-group-append">
+                        <button class="input-group-text btn btn-outline-warning"><i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </nav>
+
+
+    <!-- navigation end -->
+
+    <!-- <p><a href="#/!">Main</a></p>
+
+    <a href="#!red" class="badge badge-primary">Red</a>
+    <a href="#!green" class="badge badge-secondary">Green</a>
+    <a href="#!blue" class="badge badge-success">Blue</a> -->
+
+
+    <div class="container mt-3">
+        <div ng-view>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
