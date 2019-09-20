@@ -1,0 +1,122 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.welcome-section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.welcome-section .content-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.welcome-section .content-wrap .fly-in-text {
+  list-style: none;
+}
+
+.welcome-section .content-wrap .fly-in-text li {
+  display: inline-block;
+  font-size: 2.5em;
+  color: #fff;
+  opacity: 1;
+  transition: all 2s ease;
+}
+
+.welcome-section .content-wrap .fly-in-text li:last-child {
+  margin-right: 0;
+}
+
+.welcome-section.content-hidden .content-wrap .fly-in-text li {
+  opacity: 0;
+}
+
+.welcome-section.content-hidden .content-wrap .fly-in-text li:nth-child(1) {
+  transform: translate3d(-100px, 0, 0);
+}
+
+.welcome-section.content-hidden .content-wrap .fly-in-text li:nth-child(2) {
+  transform: translate3d(100px, 0, 0);
+}
+
+
+.welcome-section.content-hidden .content-wrap .start_button {
+  opacity: 0;
+  transform: translate3d(0, -30px, 0);
+}
+
+@media (min-width: 800px) {
+  .welcome-section .content-wrap .fly-in-text li {
+    font-size: 6.5em;
+  }
+
+  .welcome-section .content-wrap .start_button {
+    font-size: 1.5em;
+  }
+}
+
+.btn {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Boostrap Buttons Styling */
+
+.btn-default {
+
+  background:    #ffffff;
+  border:        2px solid #636e8f;
+  border-radius: 1000px;
+  padding:       9px 46px;
+  color:         #e59949;
+  display:       inline-block;
+  font:          normal normal 24px/1 "Open Sans", sans-serif;
+  text-align:    center;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-default:hover {
+  color: #FFF;
+  background: rgba(108, 88, 179, 0.75);
+  border: 1px solid rgba(116, 110, 255, 0.75);
+}
+.text-hover:hover {
+  color: #7b78ff;
+}
+.welcome_page {
+  position: relative;
+  max-width: 800px; /* Maximum width */
+  margin: 0 auto; /* Center it */
+}
+
+.welcome_page .welcome_content {
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  width: 100%; /* Full width */
+  padding: 20px; /* Some padding */
+}
+
+
+
+.ml2 {
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.ml2 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
