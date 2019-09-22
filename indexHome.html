@@ -1,120 +1,1283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Brindabon </title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Brindavan</title>
+	<meta name="description" content="Blueprint: A basic template for a page stack navigation effect" />
+	<meta name="keywords" content="blueprint, template, html, css, page stack, 3d, perspective, navigation, menu" />
+	<meta name="author" content="Codrops" />
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+	<script src="js/modernizr-custom.js"></script>
+	<script type="text/javascript" src="js/jquery.js"> </script>
+	<script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+	<script type="text/javascript" src="js/bootstrap.min.js"> </script>
 
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+	<script language="JavaScript">
+		function setVisibility(id1, id2) {
+			document.getElementById(id1).style.display = 'none';
+			document.getElementById(id2).style.display = 'inline';
+		}
 
-    <script type="text/javascript" src="js/jquery.js"> </script>
-    <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
-    <script type="text/javascript" src="js/bootstrap.min.js"> </script>
-    <script type="text/javascript" src="js/angular.min.js"> </script>
-    <script type="text/javascript" src="js/angular-route.min.js"> </script>
-    <script type="text/javascript" src="js/route.js"> </script>
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
+		function setAcVisibility(id1, id2) {
+			document.getElementById(id1).style.display = 'none';
+			document.getElementById(id2).style.display = 'inline';
+		}
+	</script>
 </head>
 
-<body style="font-family: ubuntu;" ng-app="myApp">
+<body>
+	<!-- navigation -->
+	<nav class="pages-nav">
+		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;" href="#page-home">
+				<i class="fa fa-home"></i> Home</a>
+		</div>
 
-    <!-- navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background: rgb(182, 188, 194);">
-        <a href="#/!" class="navbar-brand active">
-            <kbd>brindavan</kbd>
-        </a>
+		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;" href="#page-docu">
+				<i class="fa fa-list-alt"></i> Notice Board</a>
+		</div>
+		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;" href="#page-manuals"
+				onclick="setVisibility('secondPortion','mainPortion');">
+				<i class="fa fa-car"></i> Vehicle Logs</a>
+		</div>
+		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;" href="#page-software"
+				onclick="setVisibility('familySecond','familyMain');">
+				<i class="fa fa-users"></i> Family Members</a>
+		</div>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;" href="#page-custom"
+				onclick="setVisibility('secondBlock','mainBlock');">
+				<i class="fa fa-random"></i> Resident Directory</a>
+		</div>
+		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;" href="#page-training"><i
+					class="fa fa-phone-square"></i> Communicate with Gate?</a>
+		</div>
 
+		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;" href="#daily-helps"><i
+					class="fa fa-calendar"></i> Daily Helps </a>
+		</div>
+		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;" href="#hire-new-help"><i
+					class="fa fa-exchange"></i> Hire New Help</a>
+		</div>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <!-- <span style="padding-right: 30px;"></span> -->
-                <li class="nav-item">
-                    <a class="nav-link" href="#!noticeBoard">
-                        <i class="d-lg-none mr-2"> <img style="width: 30px; height:30px;" src="resources/logos/noticeBoard.png"></i>NoticeBoard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!vechicleLog">
-                        <i class="d-lg-none mr-1"> <img style="width: 30px; height:30px;" src="resources/logos/car.png"></i> VehicleLog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!familyMembers">
-                            <i class="d-lg-none mr-2"> <img style="width: 30px; height:30px;" src="resources/logos/family-silhouette.png"></i>FamilyMembers</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#!residentDirectory" class="nav-link">
-                            <i class="d-lg-none mr-1"> <img style="width: 30px; height:30px;" src="resources/logos/resident.png"></i>
-                            ResidentDirectory
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#!dailyHelps" class="nav-link">
-                            <i class="d-lg-none mr-1"> <img style="width: 30px; height:30px;" src="resources/logos/calendar.png"></i>
-                        DailyHelps
-                    </a>
-                </li>
+		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;"
+				href="#service-requests"><i class="fa fa-sitemap"></i> Service Requests</a>
+		</div>
 
-                <li class="nav-item">
-                    <a href="#!communicate" class="nav-link">
-                        <i class="d-lg-none mr-1"> <img style="width: 30px; height:30px;" src="resources/logos/telephone.png"></i>
-                        CommunicateGate
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#!hireNewHelp" class="nav-link">
-                            <i class="d-lg-none mr-1"> <img style="width: 30px; height:30px;" src="resources/logos/hireNewHelp.png"></i>
-                        HireNewHelp
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#!sos" class="nav-link">
-                            <i class="d-lg-none mr-1"> <img style="width: 30px; height:30px;" src="resources/logos/sos.png"></i>
-                        SOS
-                    </a>
-                </li>
-            </ul>
-
-            <form class="form-inline mt-0 ml-auto">
-                <div class="input-group">
-                    <input type="search" class="form-control form-control-sm bg-light" style="color: rgb(6, 6, 7);"
-                        placeholder="Search">
-                    <div class="input-group-append">
-                        <button class="input-group-text btn btn-outline-warning"><i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-
-        </div>
-    </nav>
+		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;" href="#sos"><i
+					class="fa fa-cogs"></i> sos</a>
+		</div>
 
 
-    <!-- navigation end -->
+	</nav>
 
-    <!-- <p><a href="#/!">Main</a></p>
+	<nav class="pages-nav" style="visibility: hidden;">
+		<div style="visibility: hidden;" class="pages-nav__item"><a class="link link--page"
+				style="text-decoration: none;" href="#registerMember">registerFamilyMember</a>
+		</div>
+	</nav>
 
-    <a href="#!red" class="badge badge-primary">Red</a>
-    <a href="#!green" class="badge badge-secondary">Green</a>
-    <a href="#!blue" class="badge badge-success">Blue</a> -->
+	<!-- /navigation-->
+
+	<!-- pages stack -->
+	<div class="pages-stack">
+		<!-- page -->
+		<div class="page" id="page-home">
+			<!-- Blueprint header -->
+			<header class="bp-header cf">
+				<span class="bp-header__present">Brindavan <span class="bp-tooltip bp-icon bp-icon--about"
+						data-content="Brindavan is providing facilities to all residents belongs to Brindavan Apartment. Thank you!"></span></span>
+				<h1 class="bp-header__title">BRINDAVAN | YOUR HOME</h1>
+				<p class="bp-header__desc">It is situated at Uttar Pradesh, India <a
+						href="https://www.google.com/maps/place/Vrindavan,+Uttar+Pradesh,+India/@27.564811,77.6243512,13z/data=!3m1!4b1!4m5!3m4!1s0x39736fcb5e9a2309:0x9868374c5faaf3ce!8m2!3d27.5650088!4d77.6593394"
+						style="text-decoration: none;">Check on Google Maps</a></p>
+			</header>
+			<img class="w-100 h-75" src="images/logos/building.png" alt="img01" />
+		</div>
+		<!-- /page -->
+		<div class="page" id="page-docu">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Notice Board</h1>
+				<p class="bp-header__desc">Notice Board of Building <a href="#"
+					style="text-decoration: none;"> Brindavan</a></p>
+			</header>
+			<div class="container" style="font-family: ubuntu;">
+				<div class="row justify-content-center">
+					<div class="col-md-10">
+						<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+							RWA Notice Board
+						</h2>
+
+						<div class="d-flex justify-content-center mt-4">
+							<h2 class="badge badge-pill bg-success p-3 text-dark" style="font-size: 20px;">
+								PRANGAN APARTMENT
+							</h2>
+						</div>
+						<div class="mt-2"></div>
+						<div>
+							<div style="cursor: pointer;" onclick="window.location='/#'" class="shadow datasets-row">
+								<div class="shadow d-flex justify-content-between">
+									<div class="d-flex col-8" style="background: rgb(75, 73, 199);">
+										<h5 class="p-1 mt-1">
+											General Body Meeting - 10.00 AM @ Club House with Lunch
+										</h5>
+									</div>
+									<div class="d-flex col-4 bg-primary">
+										<h5 class="p-1 mt-1">
+											26 Nov 2019
+										</h5>
+									</div>
+								</div>
+
+								<div class="shadow d-flex p-3">
+									The Google company was officially launched in 1998 by Larry Page and Sergey Brin to
+									market Google
+									Search, which has become the most used web-based search engine. Larry Page and
+									Sergey
+									Brin, students
+									at Stanford University in California, developed a search algorithm at first known as
+									"BackRub" in
+									1996, with the help of Scott Hassan and Alan Steremberg.
+								</div>
+							</div>
+						</div>
+
+						<div class="mt-4"></div>
+						<div>
+							<div style="cursor: pointer;" onclick="window.location='/#'" class="shadow datasets-row">
+								<div class="shadow d-flex justify-content-between">
+									<div class="d-flex col-8" style="background: rgb(75, 73, 199);">
+										<h5 class="p-1 mt-1">
+											Eid Ul Azha @ Club House with Dinner
+										</h5>
+									</div>
+									<div class="d-flex col-4 bg-primary">
+										<h5 class="p-1 mt-1">
+											20 Dec 2019 8.00 AM
+										</h5>
+									</div>
+								</div>
+
+								<div class="shadow d-flex p-3">
+									Google has engaged in partnerships with NASA, AOL, Sun Microsystems, News
+									Corporation,
+									Sky
+									UK, and
+									others. The company set up a charitable offshoot, Google.org, in 2005. Google was
+									involved
+									in a 2006
+									legal dispute in the US over a court order to disclose URLs and search strings, and
+									has
+									been
+									the subject
+									of tax avoidance investigations in the UK.
+								</div>
+							</div>
+						</div>
+						<div class="mt-4"></div>
+						<div>
+							<div style="cursor: pointer;" onclick="window.location='/#'" class="shadow datasets-row">
+								<div class="shadow d-flex justify-content-between">
+									<div class="d-flex col-8" style="background: rgb(75, 73, 199);">
+										<h5 class="p-1 mt-1">
+											Eid Ul Fitr @ Rocket House with Dinner
+										</h5>
+									</div>
+									<div class="d-flex col-4 bg-primary">
+										<h5 class="p-1 mt-1">
+											20 Dec 2019 8.00 AM
+										</h5>
+									</div>
+								</div>
+
+								<div class="shadow d-flex p-3">
+									Google has engaged in partnerships with NASA, AOL, Sun Microsystems, News
+									Corporation,
+									Sky
+									UK, and
+									others. The company set up a charitable offshoot, Google.org, in 2005. Google was
+									involved
+									in a 2006
+									legal dispute in the US over a court order to disclose URLs and search strings, and
+									has
+									been
+									the subject
+									of tax avoidance investigations in the UK.
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mt-5"></div>
+					<br>
+					<br>
+				</div>
+			</div>
+		</div>
 
 
-    <div class="container mt-3">
-        <div ng-view>
-        </div>
-    </div>
+		<div class="page" id="page-manuals">
+			<div id="mainPortion">
+				<header class="bp-header cf">
+					<h1 class="bp-header__title">Vehicle Logs</h1>
+					<p class="bp-header__desc">All List of Vehicle's Logs on Complex<a href="#"
+							style="text-decoration: none;"> Brindavan</a></p>
+				</header>
+
+				<div class="container" style="font-family: ubuntu;">
+					<div class="row justify-content-center">
+						<div class="col-md-10">
+							<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+								Vehicle Logs
+							</h2>
+							<div class="mt-4"></div>
+							<div class="d-flex justify-content-center">
+								<h2 class="badge badge-pill bg-info p-3 text-dark" style="font-size: 20px;">
+									Vehicles
+								</h2>
+							</div>
+							<div class="mt-2"></div>
+
+							<div class="d-flex">
+								<div class="shadow col-6 p-1 bg-primary text-dark font-weight-bold"
+									style="text-align: center; font-size:17px;">
+									Registered Vehicle
+								</div>
+								<div class="shadow col-5 p-1 bg-success text-dark font-weight-bold"
+									style="text-align: center; font-size:17px;">
+									Brand
+								</div>
+								<div class="col-1 p-1">
+
+								</div>
+							</div>
+
+							<div class="d-flex mt-2">
+								<div class="shadow col-6 p-1" style="text-align: center; font-size:17px;">
+									RSN13409240925
+								</div>
+								<div class="shadow col-5 p-1" style="text-align: center; font-size:17px;">
+									Porche
+								</div>
+								<div class="shadow col-1 p-0" style="text-align: center; font-size:25px;">
+									<a href="#" class="badge"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+							<div class="d-flex mt-2">
+								<div class="shadow col-6 p-1" style="text-align: center; font-size:17px;">
+									RSN13409240925
+								</div>
+								<div class="shadow col-5 p-1" style="text-align: center; font-size:17px;">
+									Lamborgini
+								</div>
+								<div class="shadow col-1 p-0" style="text-align: center; font-size:25px;">
+									<a href="#" class="badge"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+
+							<div class="d-flex justify-content-center mt-5">
+								<div class="d-flex">
+									<a href="#" style="text-decoration: none;"
+										onclick="setVisibility('mainPortion','secondPortion');">
+										<i style="font-size:110px;" class="fa fa-ambulance fa-xs"></i><br>
+										<h5 class="bold ml-2">Add Vehicle</h5>
+									</a>
+								</div>
+							</div>
+							<br>
+
+						</div>
+					</div>
+				</div>
+			</div>
 
 
+			<div id="secondPortion" aria-hidden="true">
+				<header class="bp-header cf">
+					<h1 class="bp-header__title">Register a New Vehicle</h1>
+					<p class="bp-header__desc">Please Register Vehicle to reduce Complexity on
+						<a href="#" style="text-decoration: none;"> Brindavan</a>
+					</p>
+				</header>
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-md-10">
+							<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+								Add Vehicle
+							</h2>
+							<div class="mt-4"></div>
+							<div class="d-flex justify-content-center">
+								<h2 class="badge badge-pill bg-info p-3 text-dark" style="font-size: 20px;">
+									Register
+								</h2>
+							</div>
+							<div class="mt-2"></div>
+
+							<form class="mt-3">
+								<div class="form-group">
+									<label>
+										<h5>Vehicle Number</h5>
+									</label>
+									<input type="text" class="form-control" name="vehicleNumber"
+										placeholder="Vehicle Number">
+								</div>
+								<div class="form-group">
+									<label>
+										<h5>Brand</h5>
+									</label>
+									<input type="text" class="form-control" name="vehicleNumber" placeholder="Brand">
+								</div>
+								<div class="mt-5 d-flex justify-content-center">
+									<a href="#" class="btn btn-sm btn-success text-dark font-weight-bold"
+										style="border-radius: 10%;"
+										onclick="setVisibility('secondPortion','mainPortion');">
+										Confirm
+									</a>
+								</div>
+							</form>
+
+							<br>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+
+
+
+		<div class="page" id="page-software">
+
+			<div id="familyMain">
+				<header class="bp-header cf">
+					<h1 class="bp-header__title">Family Members</h1>
+					<p class="bp-header__desc">All List of Family on Apartment<a href="#"
+							style="text-decoration: none;">
+							Brindavan</a></p>
+
+				</header>
+
+				<div class="container" style="font-family: ubuntu;">
+					<div class="row justify-content-center">
+						<div class="col-md-10">
+							<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+								Family Members
+							</h2>
+							<div class="mt-4"></div>
+
+							<div class="d-flex justify-content-center">
+								<h2 class="badge badge-pill bg-info text-dark p-3" style="font-size: 20px;">
+									Members
+								</h2>
+							</div>
+							<div class="mt-2"></div>
+							<div class="d-flex">
+								<div class="shadow col-5 p-1 font-weight-bold"
+									style="text-align: center; font-size:18px; background: rgb(116, 115, 219);">
+									Member's Name
+								</div>
+								<div class="shadow col-3 p-1 bg-success font-weight-bold"
+									style="text-align: center; font-size:18px;">
+									Relations
+								</div>
+								<div class="shadow col-3 p-1 bg-primary font-weight-bold"
+									style="text-align: center; font-size:18px;">
+									Access Type
+								</div>
+								<div class="col-1 p-1" style="text-align: center; font-size:18px;">
+
+								</div>
+							</div>
+
+							<div class="d-flex mt-2">
+								<div class="shadow col-5 p-1" style="text-align: center; font-size:15px;">
+									Golam Mostafa
+								</div>
+								<div class="shadow col-3 p-1" style="text-align: center; font-size:15px;">
+									Brother
+								</div>
+								<div class="shadow col-3 p-1" style="text-align: center; font-size:15px;">
+									Root
+								</div>
+								<div class="shadow col-1 p-0" style="text-align: center; font-size:25px;">
+									<a href="#" class="badge"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+
+							<div class="d-flex mt-2">
+								<div class="shadow col-5 p-1" style="text-align: center; font-size:15px;">
+									Ikhtier Uddin Mohammad Bin Khilji
+								</div>
+								<div class="shadow col-3 p-1" style="text-align: center; font-size:15px;">
+									Uncle
+								</div>
+								<div class="shadow col-3 p-1" style="text-align: center; font-size:15px;">
+									Priliminary
+								</div>
+								<div class="shadow col-1 p-0" style="text-align: center; font-size:25px;">
+									<a href="#" class="badge"><i class="fa fa-times"></i></a>
+								</div>
+							</div>
+
+							<div class="d-flex justify-content-center mt-5">
+								<div class="d-flex">
+									<a href="#" style="text-decoration: none;"
+										onclick="setVisibility('familyMain','familySecond');">
+										<i style="font-size:100px;" class="fa fa-user-plus"></i><br>
+										<h5 class="bold ml-1">Add Member</h5>
+									</a>
+
+								</div>
+							</div>
+							<br>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div id="familySecond" aria-hidden="true">
+				<header class="bp-header cf">
+					<h1 class="bp-header__title">Add New Member</h1>
+					<p class="bp-header__desc">Please add Members and You can't add more than 20 members<a href="#"
+							style="text-decoration: none;">
+							Brindavan</a></p>
+
+				</header>
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-md-10">
+							<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+								Add Member
+							</h2>
+							<div class="mt-4"></div>
+
+							<div class="d-flex justify-content-center">
+								<h2 class="badge badge-pill bg-info text-dark p-3" style="font-size: 20px;">
+									Register Member
+								</h2>
+							</div>
+							<div class="mt-2"></div>
+							<form class="mt-3">
+								<div class="form-group">
+									<label>
+										<h5>Member Number</h5>
+									</label>
+									<input type="text" class="form-control" name="vehicleNumber"
+										placeholder="Vehicle Number">
+								</div>
+								<div class="form-group">
+									<label>
+										<h5>Member Age</h5>
+									</label>
+									<input type="text" class="form-control" name="vehicleNumber" placeholder="Brand">
+								</div>
+								<div class="form-group">
+									<label>
+										<h5>Relations</h5>
+									</label>
+									<input type="text" class="form-control" name="vehicleNumber" placeholder="Brand">
+								</div>
+								<div class="d-flex justify-content-center">
+									<a href="#!familyMembers" class="btn btn-sm btn-success text-dark font-weight-bold"
+										style="border-radius: 10%;"
+										onclick="setVisibility('familySecond','familyMain');">
+										Confirm
+									</a>
+								</div>
+							</form>
+
+							<br>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<div class="page" id="page-custom">
+			<div id="mainBlock">
+				<header class="bp-header cf">
+					<h1 class="bp-header__title">Resident Directory</h1>
+					<p class="bp-header__desc">All Resident Directories on Complex<a href="#"
+							style="text-decoration: none;"> Brindavan</a></p>
+				</header>
+				<div class="container" style="font-family: ubuntu;">
+					<div class="row justify-content-center">
+						<div class="col-md-10">
+							<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+								Family Members
+							</h2>
+							<div class="mt-4"></div>
+							<div class="d-flex justify-content-center">
+								<h2 class="badge badge-pill bg-info text-dark p-3" style="font-size: 20px;">
+									Blocks
+								</h2>
+							</div>
+							<br>
+							<div style="cursor: pointer;" onclick="setVisibility('mainBlock','secondBlock');"
+								class="shadow datasets-row">
+								<div class="d-flex justify-content-between">
+									<div class="d-flex">
+										<h4 class="mt-2 ml-3">
+											Block A
+										</h4>
+									</div>
+									<div class="d-flex">
+										<span style="font-size: 30px;" class="mt-0 ml-3 mr-3">
+											<i class="fa fa-chevron-right"> </i>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div style="cursor: pointer;" onclick="setVisibility('mainBlock','secondBlock');"
+								class="shadow mt-3 datasets-row">
+								<div class="d-flex justify-content-between">
+									<div class="d-flex">
+										<h4 class="mt-2 ml-3">
+											Block B
+										</h4>
+									</div>
+									<div class="d-flex">
+										<span style="font-size: 30px;" class="mt-0 ml-3 mr-3">
+											<i class="fa fa-chevron-right"> </i>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+
+					<br>
+				</div>
+			</div>
+
+			<div id="secondBlock">
+				<header class="bp-header cf">
+					<h1 class="bp-header__title">Directory Details</h1>
+					<p class="bp-header__desc">Residence People on Complex<a href="#" style="text-decoration: none;">
+							Brindavan</a></p>
+				</header>
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-md-10">
+							<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+								Residence People
+							</h2>
+							<div class="mt-4"></div>
+
+							<div class="d-flex justify-content-center">
+								<h2 class="badge badge-pill bg-info p-3 text-dark" style="font-size: 20px;">
+									Block A | Total: 50
+								</h2>
+							</div>
+							<br>
+							<div class="d-flex">
+								<div class="shadow col-9 p-1 bg-primary text-dark font-weight-bold"
+									style="text-align: center; font-size:17px;">
+									0th Floor
+								</div>
+								<div class="shadow col-3 p-1 bg-success text-dark font-weight-bold"
+									style="text-align: center; font-size:17px;">
+									Flat No
+								</div>
+							</div>
+
+							<div class="d-flex mt-2">
+								<div class="shadow col-9 p-1" style="text-align: center; font-size:17px;">
+									<img src="images/logos/default.jpg"
+										style="width: 25px; height:25px; border-radius:50%;">
+									<span class="ml-2">Ahmed Bin Ikhtier Uddin Mohammad bin Khilzi</span>
+								</div>
+								<div class="shadow col-3 p-1" style="text-align: center; font-size:17px;">
+									Flat 02
+								</div>
+							</div>
+
+							<div class="d-flex mt-2">
+								<div class="shadow col-9 p-1" style="text-align: center; font-size:17px;">
+									<img src="images/logos/default.jpg"
+										style="width: 25px; height:25px; border-radius:50%;">
+									<span class="ml-2">Shartaj Ji (Singh) </span>
+								</div>
+								<div class="shadow col-3 p-1" style="text-align: center; font-size:17px;">
+									Flat 07
+								</div>
+							</div>
+
+							<div class="d-flex mt-2">
+								<div class="shadow col-9 p-1" style="text-align: center; font-size:17px;">
+									<img src="images/logos/default.jpg"
+										style="width: 25px; height:25px; border-radius:50%;">
+									<span class="ml-2">Thomas Gaitonde</span>
+								</div>
+								<div class="shadow col-3 p-1" style="text-align: center; font-size:17px;">
+									Flat 09
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="container mt-5">
+					<div class="row justify-content-center">
+						<div class="col-md-10">
+							<br>
+							<div class="d-flex">
+								<div class="shadow col-9 p-1 bg-primary text-dark font-weight-bold"
+									style="text-align: center; font-size:17px;">
+									11th Floor
+								</div>
+								<div class="shadow col-3 p-1 bg-success text-dark font-weight-bold"
+									style="text-align: center; font-size:17px;">
+									Flat No
+								</div>
+							</div>
+
+							<div class="d-flex mt-2">
+								<div class="shadow col-9 p-1" style="text-align: center; font-size:17px;">
+									<img src="images/logos/default.jpg"
+										style="width: 25px; height:25px; border-radius:50%;">
+									<span class="ml-2">Mohammad Nabi</span>
+								</div>
+								<div class="shadow col-3 p-1" style="text-align: center; font-size:17px;">
+									Flat 04
+								</div>
+							</div>
+
+							<div class="d-flex mt-2">
+								<div class="shadow col-9 p-1" style="text-align: center; font-size:17px;">
+									<img src="images/logos/default.jpg"
+										style="width: 25px; height:25px; border-radius:50%;">
+									<span class="ml-2">Kailash Kurte </span>
+								</div>
+								<div class="shadow col-3 p-1" style="text-align: center; font-size:17px;">
+									Flat 08
+								</div>
+							</div>
+
+							<div class="d-flex mt-2">
+								<div class="shadow col-9 p-1" style="text-align: center; font-size:17px;">
+									<img src="images/logos/default.jpg"
+										style="width: 25px; height:25px; border-radius:50%;">
+									<span class="ml-2">Bhogovan Singh</span>
+								</div>
+								<div class="shadow col-3 p-1" style="text-align: center; font-size:17px;">
+									Flat 11
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mt-5"></div>
+			</div>
+
+		</div>
+
+
+
+		<div class="page" id="page-training">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Communicate with gate</h1>
+				<p class="bp-header__desc">Communicate with Service Providers
+					<a href="#" style="text-decoration: none;"> Brindavan</a>
+				</p>
+			</header>
+			<div class="container" style="font-family: ubuntu;">
+				<div class="row justify-content-center">
+					<div class="col-md-10">
+						<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+							Communicate With Gate
+						</h2>
+						<div class="mt-4"></div>
+
+						<div class="d-flex justify-content-center">
+							<h2 class="badge badge-pill bg-info p-3 text-dark" style="font-size: 20px;">
+								Communications
+							</h2>
+						</div>
+
+
+						<div class="d-flex mt-5 justify-content-around">
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/parcel.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0"
+									style="width: 190px; height:40px; background: #ff7f50;">
+									<h5 style="text-align: center" class="text-light mb-3"> Parcel Recieve </h5>
+								</div>
+							</div>
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/guest.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0"
+									style="width: 190px; height:40px; background: #ff7f50;">
+									<h5 style="text-align: center" class="text-light mb-3"> Guest </h5>
+								</div>
+							</div>
+
+						</div>
+
+
+						<br>
+						<div class="d-flex mt-5 justify-content-around">
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/police-officer.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0"
+									style="width: 190px; height:40px; background: #ff7f50;">
+									<h5 style="text-align: center" class="text-light mb-3"> Police Officer </h5>
+								</div>
+							</div>
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/driver.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0"
+									style="width: 190px; height:40px; background: #ff7f50;">
+									<h5 style="text-align: center" class="text-light mb-3"> Driver </h5>
+								</div>
+							</div>
+
+						</div>
+
+
+
+						<br>
+						<div class="d-flex mt-5 justify-content-around">
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/admin.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0"
+									style="width: 190px; height:40px; background: #ff7f50;">
+									<h5 style="text-align: center" class="text-light mb-3"> Admin Panel </h5>
+								</div>
+							</div>
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/taxi3-512.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0"
+									style="width: 190px; height:40px; background: #ff7f50;">
+									<h5 style="text-align: center" class="text-light mb-3"> Taxi Cab </h5>
+								</div>
+							</div>
+
+						</div>
+
+
+
+						<br>
+						<div class="d-flex mt-5 justify-content-around">
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/management.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0"
+									style="width: 190px; height:40px; background: #ff7f50;">
+									<h5 style="text-align: center" class="text-light mb-3"> Management </h5>
+								</div>
+							</div>
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/others.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0"
+									style="width: 190px; height:40px; background: #ff7f50;">
+									<h5 style="text-align: center" class="text-light mb-3"> Others </h5>
+								</div>
+							</div>
+
+						</div>
+
+						<style>
+							.datasets-row-helps:hover {
+								background-color: #f7c2b1;
+
+							}
+						</style>
+
+						<div class="mt-5"></div>
+						<br>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="page" id="daily-helps">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Daily Helps</h1>
+				<p class="bp-header__desc">All Daily Helps on Complex
+					<a href="#" style="text-decoration: none;"> Brindavan</a>
+				</p>
+			</header>
+			<div class="container" style="font-family: ubuntu;">
+				<div class="row justify-content-center">
+					<div class="col-md-10">
+						<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+							Daily helps
+						</h2>
+						<div class="mt-4"></div>
+						<div class="d-flex justify-content-center">
+							<h2 class="badge badge-pill bg-info text-dark p-3" style="font-size: 20px;">
+								All Helps
+							</h2>
+						</div>
+						<div class="mt-4"></div>
+
+						<div class="shadow input-group">
+							<div class="input-group-append">
+								<button class="input-group-append input-group-text fa fa-search"></button>
+							</div>
+
+							<input type="search" class="form-control bg-light">
+							<div class="input-group-append">
+								<a href="#" class="input-group-prepend input-group-text btn btn-sm">
+									<i class=" fa fa-filter"> F</i>ilter
+								</a>
+							</div>
+						</div>
+
+						<div class="mt-3"></div>
+
+						<!-- LOOP Starts -->
+
+						<div class="shadow datasets-row-hire" style="font-size: 14px;">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex col-2">
+									<div class="p-3 mt-4">
+										<img src="images/logos/occupation.png">
+									</div>
+								</div>
+								<div class="d-flex col-7 mb-1">
+									<div class="p-2 text-dark">
+										<h5 style="font-weight: 600;"> Cook </h5>
+										<a href="#" style="text-decoration: none;"> MANOJ KUMAR </a><br>
+										1.5 <span class="fa fa-star-o mr-4"></span>
+										5 <span class="fa fa-home"></span> <br>
+										<span class="fa fa-thumb-tack"></span> 6.25 PM <br>
+										<a href="#" class="text-white mt-2 fa fa-phone badge badge-pill bg-primary">
+											Call </a>
+										<a href="#"
+											class="text-white mt-2 fa fa-address-card-o badge badge-pill bg-success">
+											GatePass </a>
+										<a href="#" class="text-white mt-2 fa fa-remove badge badge-pill bg-danger">
+											Remove </a>
+									</div>
+								</div>
+								<div class="d-flex col-2">
+									<div class="p-3">
+										<a href="#" style="text-decoration: none; font-size:25px;"
+											class="fa fa-bell-o"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- LOOP Ends -->
+
+						<div class="shadow mt-3 datasets-row-hire" style="font-size: 14px;">
+							<div class="d-flex justify-content-between">
+								<div class="d-flex col-2">
+									<div class="p-3 mt-4">
+										<img src="images/logos/driver.png">
+									</div>
+								</div>
+								<div class="d-flex col-7 mb-1">
+									<div class="p-2 text-dark">
+										<h5 style="font-weight: 600;"> Driver </h5>
+										<a href="#" style="text-decoration: none;"> Shartaj Shigh </a><br>
+										4.5 <span class="fa fa-star mr-4"></span>
+										15 <span class="fa fa-home"></span> <br>
+										<span class="fa fa-sign-out"></span> 9.00 AM <br>
+										<a href="#" class="text-white mt-2 fa fa-phone badge badge-pill bg-primary">
+											Call </a>
+										<a href="#"
+											class="text-white mt-2 fa fa-address-card-o badge badge-pill bg-success">
+											GatePass </a>
+										<a href="#" class="text-white mt-2 fa fa-remove badge badge-pill bg-danger">
+											Remove </a>
+									</div>
+								</div>
+								<div class="d-flex col-2">
+									<div class="p-3">
+										<a href="#" style="text-decoration: none; font-size:25px;"
+											class="fa fa-bell"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="mt-5 d-flex justify-content-center">
+							<a style="font-size:80px; text-decoration:none;" href="#!dailyHelps"
+								class="fa fa-plus-circle"></a>
+						</div>
+
+
+					</div>
+
+					<div class="mt-5"></div>
+					<br>
+				</div>
+
+				<style>
+					.datasets-row-hire {
+						background-color: #f7c2b0;
+					}
+
+					.datasets-row-hire:hover {
+						background-color: #fcae95;
+
+					}
+				</style>
+			</div>
+		</div>
+
+
+		<div class="page" id="hire-new-help">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Hire New Help</h1>
+				<p class="bp-header__desc">All New Helps on Complex
+					<a href="#" style="text-decoration: none;"> Brindavan</a>
+				</p>
+			</header>
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-10">
+						<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+							Hire New Help
+						</h2>
+						<div class="mt-4"></div>
+
+						<div class="d-flex justify-content-center">
+							<h2 class="badge badge-pill bg-info p-3 text-dark" style="font-size: 20px;">
+								New Helps
+							</h2>
+						</div>
+
+						<div class="d-flex mt-5 justify-content-around">
+
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/occupation.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0"
+									style="width: 190px; height:40px; background: #ff7f50;">
+									<h5 style="text-align: center" class="text-light mb-3"> Maid </h5>
+								</div>
+							</div>
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/doctor.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0"
+									style="width: 190px; height:40px; background: #ff7f50;">
+									<h5 style="text-align: center" class="text-light mb-3"> Doctor </h5>
+								</div>
+							</div>
+
+						</div>
+
+						<br>
+						<div class="d-flex mt-5 justify-content-around">
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/police-officer.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0"
+									style="width: 190px; height:40px; background: #ff7f50;">
+									<h5 style="text-align: center" class="text-light mb-3"> Police Officer </h5>
+								</div>
+							</div>
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/taxi3-512.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0"
+									style="width: 190px; height:40px; background: #ff7f50;">
+									<h5 style="text-align: center" class="text-light mb-3"> Texi Cab </h5>
+								</div>
+							</div>
+
+						</div>
+
+						<br>
+						<div class="d-flex mt-5 justify-content-around">
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/management.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0"
+									style="width: 190px; height:40px; background: #ff7f50;">
+									<h5 style="text-align: center" class="text-light mb-3"> Management </h5>
+								</div>
+							</div>
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/others.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0"
+									style="width: 190px; height:40px; background: #ff7f50;">
+									<h5 style="text-align: center" class="text-light mb-3"> Others </h5>
+								</div>
+							</div>
+
+						</div>
+
+
+						<div class="mt-5"></div>
+						<br>
+					</div>
+				</div>
+
+				<!-- <style>
+					.datasets-row-newHelp:hover {
+						background-color: #fab59e;
+
+					}
+				</style> -->
+			</div>
+		</div>
+
+
+
+		<div class="page" id="service-requests">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Service Requests</h1>
+				<p class="bp-header__desc">Service Requests on Complex
+					<a href="#" style="text-decoration: none;"> Brindavan</a>
+				</p>
+			</header>
+			<div class="container">
+				Service Requests
+			</div>
+		</div>
+
+
+
+		<div class="page" id="sos">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">SOS</h1>
+				<p class="bp-header__desc">All Daily Helps on Complex
+					<a href="#" style="text-decoration: none;"> Brindavan</a>
+				</p>
+			</header>
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-10">
+						<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+							SOS
+						</h2>
+						<div class="mt-4"></div>
+
+						<div class="d-flex justify-content-center">
+							<h2 class="badge badge-pill text-dark bg-info p-3" style="font-size: 20px;">
+								Emergency Call
+							</h2>
+						</div>
+
+						<br>
+						<div class="d-flex mt-5 justify-content-around">
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/management.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0 danger-change"
+									style="cursor: pointer; width: 190px; height:40px;" onclick="windows.location='#'">
+									<h5 style="text-align: center" class="mb-3"> Call Manager </h5>
+								</div>
+							</div>
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/police-officer.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0 danger-change"
+									style="cursor: pointer; width: 190px; height:40px;" onclick="windows.location='#'">
+									<h5 style="text-align: center" class="mb-3"> Call Police</h5>
+								</div>
+							</div>
+						</div>
+
+
+						<br>
+						<div class="d-flex mt-5 justify-content-around">
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/doctor.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0 danger-change"
+									style="cursor: pointer; width: 190px; height:40px;" onclick="windows.location='#'">
+									<h5 style="text-align: center" class="mb-3"> Call Doctor </h5>
+								</div>
+							</div>
+
+							<div class="card shadow border-0" style="background: #fcae95;">
+								<div class="datasets-row-helps shadow card-body rounded"
+									style="width: 190px; height:190px;">
+									<a href="#!dailyHelps" style="text-decoration: none;">
+										<img class="p-4" style="width:150px; height:150px;"
+											src="images/logos/admin.png">
+									</a>
+								</div>
+								<div class="card-header rounded border-0 danger-change"
+									style="cursor: pointer; width: 190px; height:40px;" onclick="windows.location='#'">
+									<h5 style="text-align: center" class="mb-3"> Call Admin </h5>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="mt-5"></div>
+
+						<br>
+					</div>
+				</div>
+
+				<style>
+					/* .datasets-row-sos:hover {
+						background-color: rgb(224, 226, 226);
+
+					} */
+
+					.danger-change {
+						color: black;
+						background: rgb(238, 56, 56);
+					}
+
+					.danger-change:hover {
+						background: red;
+					}
+				</style>
+			</div>
+		</div>
+
+
+		<div class="page" id="registerMemberjj">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">registerVehicle</h1>
+				<p class="bp-header__desc">All Daily Helps on Complex
+					<a href="#" style="text-decoration: none;"> Brindavan</a>
+				</p>
+			</header>
+			<div class="container">
+				fuck
+			</div>
+		</div>
+
+
+	</div>
+	<!-- /pages-stack -->
+	<button class="menu-button"><span>Menu</span></button>
+	<script src="js/classie.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>
