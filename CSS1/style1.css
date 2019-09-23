@@ -1,9 +1,8 @@
 body {
-    background-image: url("../IMG/welcome.png");
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center center;
     background-color: #000000;
+    background-image: url("../IMG/welcome.png");
+    background-repeat:no-repeat;
+    background-size:cover;
 }
 
 .area {
@@ -11,7 +10,7 @@ body {
     position: relative;
     background: rgba(30, 30, 30, 0.4);
     text-align: center;
-    padding: 35px;
+    padding: 50px;
     border: 2px solid #474c78;
     -webkit-border-radius: 70px 0 70px 0;
     -moz-border-radius: 70px 0 70px 0;

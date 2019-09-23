@@ -25,11 +25,18 @@
 			document.getElementById(id1).style.display = 'none';
 			document.getElementById(id2).style.display = 'inline';
 		}
-
-		function setAcVisibility(id1, id2) {
-			document.getElementById(id1).style.display = 'none';
-			document.getElementById(id2).style.display = 'inline';
+		function myFunction() {
+			alert('Guest or Service Provider what you search, is found on database. He may enter to Residential Area. Thank you for staying with us. :)');
 		}
+
+		function openCamera() {
+			alert('On Android Phone, it will open Camera! Thank you.');
+		}
+
+		function myNotification(){
+			alert('Notification of Guests or Parcel or Something else, is sent to Unit Owner and Member. Thank you.');
+		}
+
 	</script>
 </head>
 
@@ -60,8 +67,8 @@
 					class="fa fa-phone-square"></i> Communicate with Gate?</a>
 		</div>
 
-		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;" href="#daily-helps"><i
-					class="fa fa-calendar"></i> Daily Helps </a>
+		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;" href="#daily-helps"
+				onclick="setVisibility('secondHelp','mainHelp');"><i class="fa fa-calendar"></i> Daily Helps </a>
 		</div>
 		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;" href="#hire-new-help"><i
 					class="fa fa-exchange"></i> Hire New Help</a>
@@ -71,10 +78,17 @@
 				href="#service-requests"><i class="fa fa-sitemap"></i> Service Requests</a>
 		</div>
 
+		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;" href="#help_guest"><i
+					class="fa fa-key"></i> Help Guest or Service Provider</a>
+		</div>
+
 		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;" href="#sos"><i
 					class="fa fa-cogs"></i> sos</a>
 		</div>
 
+		<div class="pages-nav__item"><a class="link link--page" style="text-decoration: none;"
+				href="#unannounced_guest"><i class="fa fa-sitemap"></i> Unannounced Guest</a>
+		</div>
 
 	</nav>
 
@@ -105,8 +119,8 @@
 		<div class="page" id="page-docu">
 			<header class="bp-header cf">
 				<h1 class="bp-header__title">Notice Board</h1>
-				<p class="bp-header__desc">Notice Board of Building <a href="#"
-					style="text-decoration: none;"> Brindavan</a></p>
+				<p class="bp-header__desc">Notice Board of Building <a href="#" style="text-decoration: none;">
+						Brindavan</a></p>
 			</header>
 			<div class="container" style="font-family: ubuntu;">
 				<div class="row justify-content-center">
@@ -122,7 +136,7 @@
 						</div>
 						<div class="mt-2"></div>
 						<div>
-							<div style="cursor: pointer;" onclick="window.location='/#'" class="shadow datasets-row">
+							<div style="cursor: pointer;" onclick="window.location='/#'" class="shadow">
 								<div class="shadow d-flex justify-content-between">
 									<div class="d-flex col-8" style="background: rgb(75, 73, 199);">
 										<h5 class="p-1 mt-1">
@@ -151,7 +165,7 @@
 
 						<div class="mt-4"></div>
 						<div>
-							<div style="cursor: pointer;" onclick="window.location='/#'" class="shadow datasets-row">
+							<div style="cursor: pointer;" onclick="window.location='/#'" class="shadow">
 								<div class="shadow d-flex justify-content-between">
 									<div class="d-flex col-8" style="background: rgb(75, 73, 199);">
 										<h5 class="p-1 mt-1">
@@ -183,7 +197,7 @@
 						</div>
 						<div class="mt-4"></div>
 						<div>
-							<div style="cursor: pointer;" onclick="window.location='/#'" class="shadow datasets-row">
+							<div style="cursor: pointer;" onclick="window.location='/#'" class="shadow">
 								<div class="shadow d-flex justify-content-between">
 									<div class="d-flex col-8" style="background: rgb(75, 73, 199);">
 										<h5 class="p-1 mt-1">
@@ -530,7 +544,7 @@
 							</div>
 							<br>
 							<div style="cursor: pointer;" onclick="setVisibility('mainBlock','secondBlock');"
-								class="shadow datasets-row">
+								class="shadow">
 								<div class="d-flex justify-content-between">
 									<div class="d-flex">
 										<h4 class="mt-2 ml-3">
@@ -545,7 +559,7 @@
 								</div>
 							</div>
 							<div style="cursor: pointer;" onclick="setVisibility('mainBlock','secondBlock');"
-								class="shadow mt-3 datasets-row">
+								class="shadow mt-3">
 								<div class="d-flex justify-content-between">
 									<div class="d-flex">
 										<h4 class="mt-2 ml-3">
@@ -869,132 +883,191 @@
 
 
 		<div class="page" id="daily-helps">
-			<header class="bp-header cf">
-				<h1 class="bp-header__title">Daily Helps</h1>
-				<p class="bp-header__desc">All Daily Helps on Complex
-					<a href="#" style="text-decoration: none;"> Brindavan</a>
-				</p>
-			</header>
-			<div class="container" style="font-family: ubuntu;">
-				<div class="row justify-content-center">
-					<div class="col-md-10">
-						<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
-							Daily helps
-						</h2>
-						<div class="mt-4"></div>
-						<div class="d-flex justify-content-center">
-							<h2 class="badge badge-pill bg-info text-dark p-3" style="font-size: 20px;">
-								All Helps
+			<div id="mainHelp">
+				<header class="bp-header cf">
+					<h1 class="bp-header__title">Daily Helps</h1>
+					<p class="bp-header__desc">All Daily Helps on Complex
+						<a href="#" style="text-decoration: none;"> Brindavan</a>
+					</p>
+				</header>
+				<div class="container" style="font-family: ubuntu;">
+					<div class="row justify-content-center">
+						<div class="col-md-10">
+							<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+								Daily helps
 							</h2>
-						</div>
-						<div class="mt-4"></div>
+							<div class="mt-4"></div>
+							<div class="d-flex justify-content-center">
+								<h2 class="badge badge-pill bg-info text-dark p-3" style="font-size: 20px;">
+									All Helps
+								</h2>
+							</div>
+							<div class="mt-4"></div>
 
-						<div class="shadow input-group">
-							<div class="input-group-append">
-								<button class="input-group-append input-group-text fa fa-search"></button>
+							<div class="shadow input-group">
+								<div class="input-group-append">
+									<button class="input-group-append input-group-text fa fa-search"></button>
+								</div>
+
+								<input type="search" class="form-control bg-light">
+								<div class="input-group-append">
+									<a href="#" class="input-group-prepend input-group-text btn btn-sm">
+										<i class=" fa fa-filter"> F</i>ilter
+									</a>
+								</div>
 							</div>
 
-							<input type="search" class="form-control bg-light">
-							<div class="input-group-append">
-								<a href="#" class="input-group-prepend input-group-text btn btn-sm">
-									<i class=" fa fa-filter"> F</i>ilter
-								</a>
-							</div>
-						</div>
+							<div class="mt-3"></div>
 
-						<div class="mt-3"></div>
+							<!-- LOOP Starts -->
 
-						<!-- LOOP Starts -->
-
-						<div class="shadow datasets-row-hire" style="font-size: 14px;">
-							<div class="d-flex justify-content-between">
-								<div class="d-flex col-2">
-									<div class="p-3 mt-4">
-										<img src="images/logos/occupation.png">
+							<div class="shadow datasets-row-hire" style="font-size: 14px;">
+								<div class="d-flex justify-content-between">
+									<div class="d-flex col-2">
+										<div class="p-3 mt-4">
+											<img src="images/logos/occupation.png">
+										</div>
 									</div>
-								</div>
-								<div class="d-flex col-7 mb-1">
-									<div class="p-2 text-dark">
-										<h5 style="font-weight: 600;"> Cook </h5>
-										<a href="#" style="text-decoration: none;"> MANOJ KUMAR </a><br>
-										1.5 <span class="fa fa-star-o mr-4"></span>
-										5 <span class="fa fa-home"></span> <br>
-										<span class="fa fa-thumb-tack"></span> 6.25 PM <br>
-										<a href="#" class="text-white mt-2 fa fa-phone badge badge-pill bg-primary">
-											Call </a>
-										<a href="#"
-											class="text-white mt-2 fa fa-address-card-o badge badge-pill bg-success">
-											GatePass </a>
-										<a href="#" class="text-white mt-2 fa fa-remove badge badge-pill bg-danger">
-											Remove </a>
+									<div class="d-flex col-7 mb-1">
+										<div class="p-2 text-dark">
+											<h5 style="font-weight: 600;"> Cook </h5>
+											<a href="#" style="text-decoration: none;"> MANOJ KUMAR </a><br>
+											1.5 <span class="fa fa-star-o mr-4"></span>
+											5 <span class="fa fa-home"></span> <br>
+											<span class="fa fa-thumb-tack"></span> 6.25 PM <br>
+											<a href="#" class="text-white mt-2 fa fa-phone badge badge-pill bg-primary">
+												Call </a>
+											<a href="#"
+												class="text-white mt-2 fa fa-address-card-o badge badge-pill bg-success">
+												GatePass </a>
+											<a href="#" class="text-white mt-2 fa fa-remove badge badge-pill bg-danger">
+												Remove </a>
+										</div>
 									</div>
-								</div>
-								<div class="d-flex col-2">
-									<div class="p-3">
-										<a href="#" style="text-decoration: none; font-size:25px;"
-											class="fa fa-bell-o"></a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- LOOP Ends -->
-
-						<div class="shadow mt-3 datasets-row-hire" style="font-size: 14px;">
-							<div class="d-flex justify-content-between">
-								<div class="d-flex col-2">
-									<div class="p-3 mt-4">
-										<img src="images/logos/driver.png">
-									</div>
-								</div>
-								<div class="d-flex col-7 mb-1">
-									<div class="p-2 text-dark">
-										<h5 style="font-weight: 600;"> Driver </h5>
-										<a href="#" style="text-decoration: none;"> Shartaj Shigh </a><br>
-										4.5 <span class="fa fa-star mr-4"></span>
-										15 <span class="fa fa-home"></span> <br>
-										<span class="fa fa-sign-out"></span> 9.00 AM <br>
-										<a href="#" class="text-white mt-2 fa fa-phone badge badge-pill bg-primary">
-											Call </a>
-										<a href="#"
-											class="text-white mt-2 fa fa-address-card-o badge badge-pill bg-success">
-											GatePass </a>
-										<a href="#" class="text-white mt-2 fa fa-remove badge badge-pill bg-danger">
-											Remove </a>
-									</div>
-								</div>
-								<div class="d-flex col-2">
-									<div class="p-3">
-										<a href="#" style="text-decoration: none; font-size:25px;"
-											class="fa fa-bell"></a>
+									<div class="d-flex col-2">
+										<div class="p-3">
+											<a href="#" style="text-decoration: none; font-size:25px;"
+												class="fa fa-bell-o"></a>
+										</div>
 									</div>
 								</div>
 							</div>
+							<!-- LOOP Ends -->
+
+							<div class="shadow mt-3 datasets-row-hire" style="font-size: 14px;">
+								<div class="d-flex justify-content-between">
+									<div class="d-flex col-2">
+										<div class="p-3 mt-4">
+											<img src="images/logos/driver.png">
+										</div>
+									</div>
+									<div class="d-flex col-7 mb-1">
+										<div class="p-2 text-dark">
+											<h5 style="font-weight: 600;"> Driver </h5>
+											<a href="#" style="text-decoration: none;"> Shartaj Shigh </a><br>
+											4.5 <span class="fa fa-star mr-4"></span>
+											15 <span class="fa fa-home"></span> <br>
+											<span class="fa fa-sign-out"></span> 9.00 AM <br>
+											<a href="#" class="text-white mt-2 fa fa-phone badge badge-pill bg-primary">
+												Call </a>
+											<a href="#"
+												class="text-white mt-2 fa fa-address-card-o badge badge-pill bg-success">
+												GatePass </a>
+											<a href="#" class="text-white mt-2 fa fa-remove badge badge-pill bg-danger">
+												Remove </a>
+										</div>
+									</div>
+									<div class="d-flex col-2">
+										<div class="p-3">
+											<a href="#" style="text-decoration: none; font-size:25px;"
+												class="fa fa-bell"></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="mt-5 d-flex justify-content-center">
+								<a style="font-size:80px; text-decoration:none;" href="#"
+									onclick="setVisibility('mainHelp','secondHelp');" class="fa fa-plus-circle"></a>
+							</div>
 						</div>
-
-
-						<div class="mt-5 d-flex justify-content-center">
-							<a style="font-size:80px; text-decoration:none;" href="#!dailyHelps"
-								class="fa fa-plus-circle"></a>
-						</div>
-
-
 					</div>
 
-					<div class="mt-5"></div>
-					<br>
 				</div>
-
-				<style>
-					.datasets-row-hire {
-						background-color: #f7c2b0;
-					}
-
-					.datasets-row-hire:hover {
-						background-color: #fcae95;
-
-					}
-				</style>
 			</div>
+			<div id="secondHelp">
+				<header class="bp-header cf">
+					<h1 class="bp-header__title">Add New Help</h1>
+					<p class="bp-header__desc">Add New Kinds of Helps for Residence on Complex
+						<a href="#" style="text-decoration: none;"> Brindavan</a>
+					</p>
+				</header>
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-md-10">
+							<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+								Register A New Help Request
+							</h2>
+							<div class="mt-4"></div>
+							<div class="d-flex justify-content-center">
+								<h2 class="badge text-dark badge-pill bg-info p-3" style="font-size: 20px;">
+									Help Request
+								</h2>
+							</div>
+							<div class="mt-2"></div>
+							<form class="mt-3">
+								<div class="form-group">
+									<label>
+										<h5>Type</h5>
+									</label>
+									<input type="text" class="form-control" name="type" placeholder="Type of services">
+								</div>
+								<div class="form-group">
+									<label>
+										<h5>Name</h5>
+									</label>
+									<input type="text" class="form-control" name="name" placeholder="Name">
+								</div>
+								<div class="form-group">
+									<label>
+										<h5>Phone_Number</h5>
+									</label>
+									<input type="text" class="form-control" name="phone_number"
+										placeholder="Phone_number">
+								</div>
+								<div class="form-group">
+									<label>
+										<h5>Address</h5>
+									</label>
+									<input type="text" class="form-control" name="address" placeholder="Your Address">
+								</div>
+								<div class="d-flex justify-content-center">
+									<a href="#" onclick="setVisibility('secondHelp','mainHelp');"
+										class="btn btn-sm btn-success" style="border-radius: 10%;">
+										Confirm
+									</a>
+								</div>
+							</form>
+
+							<br>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<style>
+				.datasets-row-hire {
+					background-color: #f7c2b0;
+				}
+
+				.datasets-row-hire:hover {
+					background-color: #fcae95;
+
+				}
+			</style>
+
+			<div class="mt-2"></div>
 		</div>
 
 
@@ -1122,13 +1195,6 @@
 						<br>
 					</div>
 				</div>
-
-				<!-- <style>
-					.datasets-row-newHelp:hover {
-						background-color: #fab59e;
-
-					}
-				</style> -->
 			</div>
 		</div>
 
@@ -1136,13 +1202,159 @@
 
 		<div class="page" id="service-requests">
 			<header class="bp-header cf">
-				<h1 class="bp-header__title">Service Requests</h1>
-				<p class="bp-header__desc">Service Requests on Complex
+				<h1 class="bp-header__title">Current Service Requests</h1>
+				<p class="bp-header__desc">Current Service Requests on Complex
 					<a href="#" style="text-decoration: none;"> Brindavan</a>
 				</p>
 			</header>
 			<div class="container">
-				Service Requests
+
+				<div class="row justify-content-center">
+					<div class="col-md-10">
+						<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+							Current Service Request
+						</h2>
+						<div class="mt-4"></div>
+
+						<div class="d-flex justify-content-center">
+							<h2 class="badge text-dark badge-pill bg-info p-3" style="font-size: 20px;">
+								Service Request
+							</h2>
+						</div>
+						<div class="mt-4"></div>
+
+						<div class="shadow input-group">
+							<div class="input-group-append">
+								<button class="input-group-prepend input-group-text fa fa-search"></button>
+							</div>
+
+							<input type="search" class="form-control bg-light">
+							<div class="input-group-append">
+								<a href="#" class="input-group-prepend input-group-text btn btn-sm">
+									<i class=" fa fa-filter"> F</i>ilter
+								</a>
+							</div>
+						</div>
+
+						<div class="mt-3"></div>
+
+						<table class="table table-striped table-dark">
+							<thead>
+								<tr>
+									<th scope="col">Id</th>
+									<th scope="col">Name</th>
+									<th scope="col">PhoneNumber</th>
+									<th scope="col">Date</th>
+									<th scope="col">Unit</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Mobin</td>
+									<td>0151235689</td>
+									<td>12-02-2019</td>
+									<td>unit-20</td>
+
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>suna miya</td>
+									<td>01512356452</td>
+									<td>12-05-2015</td>
+									<td>unit-25</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>delowar</td>
+									<td>0151245892</td>
+									<td>26-02-2016</td>
+									<td>unit-15</td>
+								</tr>
+								<tr>
+									<th scope="row">4</th>
+									<td>raju miya</td>
+									<td>0151245892</td>
+									<td>26-02-2016</td>
+									<td>unit-23</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>suna miya</td>
+									<td>01512356452</td>
+									<td>12-05-2015</td>
+									<td>unit-25</td>
+								</tr>
+								<tr>
+									<th scope="row">1</th>
+									<td>Mobin</td>
+									<td>0151235689</td>
+									<td>12-02-2019</td>
+									<td>unit-20</td>
+								</tr>
+								<tr>
+									<th scope="row">1</th>
+									<td>Mobin</td>
+									<td>0151235689</td>
+									<td>12-02-2019</td>
+									<td>unit-20</td>
+
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>suna miya</td>
+									<td>01512356452</td>
+									<td>12-05-2015</td>
+									<td>unit-25</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>delowar</td>
+									<td>0151245892</td>
+									<td>26-02-2016</td>
+									<td>unit-15</td>
+								</tr>
+								<tr>
+									<th scope="row">4</th>
+									<td>raju miya</td>
+									<td>0151245892</td>
+									<td>26-02-2016</td>
+									<td>unit-23</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>suna miya</td>
+									<td>01512356452</td>
+									<td>12-05-2015</td>
+									<td>unit-25</td>
+								</tr>
+								<tr>
+									<th scope="row">1</th>
+									<td>Mobin</td>
+									<td>0151235689</td>
+									<td>12-02-2019</td>
+									<td>unit-20</td>
+								</tr>
+							</tbody>
+						</table>
+
+
+					</div>
+
+					<div class="mt-5"></div>
+					<br>
+				</div>
+
+				<style>
+					.datasets-row:hover {
+						background-color: rgb(235, 241, 241);
+
+					}
+				</style>
+
+
+
 			</div>
 		</div>
 
@@ -1260,15 +1472,181 @@
 		</div>
 
 
-		<div class="page" id="registerMemberjj">
+		<div class="page" id="help_guest">
 			<header class="bp-header cf">
-				<h1 class="bp-header__title">registerVehicle</h1>
-				<p class="bp-header__desc">All Daily Helps on Complex
+				<h1 class="bp-header__title">Help Guest | Service Provider</h1>
+				<p class="bp-header__desc">This page helps Guests or Service Providers on Complex to enter into
+					Residential Area
 					<a href="#" style="text-decoration: none;"> Brindavan</a>
 				</p>
 			</header>
 			<div class="container">
-				fuck
+				<div class="row justify-content-center">
+					<div class="col-md-10">
+						<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+							Helps Newcomer
+						</h2>
+						<div class="mt-4"></div>
+
+						<div class="d-flex justify-content-center">
+							<h2 class="badge text-dark badge-pill bg-info p-3" style="font-size: 20px;">
+								Authenticate Panel
+							</h2>
+						</div>
+						<div class="mt-2"></div>
+						<div class="p-2 font-weight-bold" style="font-size: 20px;">| First Process</div>
+						<div class="ml-3 font-weight-bold" style="font-size: 13px;">Please tell Phone Number and
+							Passcode to Security Guard</div>
+						<div class="shadow ml-3 p-3">
+							<form class="mt-3">
+								<div class="form-group">
+									<label>
+										<h5>Phone Number</h5>
+									</label>
+									<input type="text" class="form-control" name="phone_number"
+										placeholder="Phone_number">
+								</div>
+								<div class="form-group">
+									<label>
+										<h5>Passcode</h5>
+									</label>
+									<input type="password" class="form-control" name="address"
+										placeholder="Your Address">
+								</div>
+								<div class="d-flex justify-content-center">
+									<a href="#" onclick="myFunction();" class="btn btn-sm btn-success"
+										style="border-radius: 10%;">
+										Send
+									</a>
+								</div>
+							</form>
+						</div>
+
+						<div class="p-2 mt-5 font-weight-bold" style="font-size: 20px;">| Second Process</div>
+						<div class="ml-3 font-weight-bold" style="font-size: 13px;"> Please Show QRCode to Security
+							Guard
+						</div>
+						<div class="shadow ml-3 p-3">
+							<div class="shadow p-2 badge badge-primary fa fa-qrcode"> Show what you have?</div>
+							<div class="shadow p-3 mb-3 mt-3">
+
+								<input type="file" onclick="openCamera();" accept="images/*" placeholder="Open Camera"
+									capture="camera" style="border-radius: 10%;">
+							</div>
+
+							<div class="d-flex justify-content-center">
+								<a href="#" class="btn btn-sm btn-success" onclick="myFunction();"
+									style="border-radius: 10%;">
+									Send
+								</a>
+							</div>
+						</div>
+
+
+						<div class="p-2 mt-5 font-weight-bold" style="font-size: 20px;">| Third Process</div>
+						<div class="ml-3 font-weight-bold" style="font-size: 13px;">Please tell unit number and owner
+							name to Security Guard where you want to go. </div>
+						<div class="shadow ml-3 p-3">
+							<div class="form-group">
+								<label>
+									<h5>Unit Number</h5>
+								</label>
+								<input type="text" class="form-control" name="unit_number" placeholder="Phone_number">
+							</div>
+							<div class="form-group">
+								<label>
+									<h5>Unit Owner Name</h5>
+								</label>
+								<input type="text" class="form-control" name="unit_owner" placeholder="Phone_number">
+							</div>
+							<div class="d-flex justify-content-center">
+								<a href="#" onclick="myFunction();" class="btn btn-sm btn-success"
+									style="border-radius: 10%;">
+									Send
+								</a>
+							</div>
+						</div>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="page" id="unannounced_guest">
+			<header class="bp-header cf">
+				<h1 class="bp-header__title">Unannounced Guest</h1>
+				<p class="bp-header__desc">This page helps Unannounced Guests to enter into
+					Residential Area via sending Notifications to Concerned Unit.
+					<a href="#" style="text-decoration: none;"> Brindavan</a>
+				</p>
+			</header>
+
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-10">
+						<h2 class="shadow p-2 text-info font-weight-bold" style="text-align: center;">
+							Notifications to Unit
+						</h2>
+						<div class="mt-4"></div>
+
+						<div class="d-flex justify-content-center">
+							<h2 class="badge text-dark badge-pill bg-info p-3" style="font-size: 20px;">
+								Notification Panel
+							</h2>
+						</div>
+						<div class="mt-2"></div>
+						<form class="mt-3">
+							<div class="form-group">
+								<label>
+									<h5>Guest Name</h5>
+								</label>
+								<input type="text" class="form-control" name="guest_name" placeholder="Guest_name">
+							</div>
+							<div class="form-group">
+								<label>
+									<h5>Sex</h5>
+								</label>
+								<input type="text" class="form-control" name="Sex" placeholder="Sex">
+							</div>
+							<div class="form-group">
+								<label>
+									<h5>Phone Number</h5>
+								</label>
+								<input type="text" class="form-control" name="phone_number" placeholder="Phone_number">
+							</div>
+							<div class="form-group">
+								<label>
+									<h5>Your Address</h5>
+								</label>
+								<input type="text" class="form-control" name="address" placeholder="Your Address">
+							</div>
+							<div class="form-group">
+								<label>
+									<h5>Concerned Unit Number</h5>
+								</label>
+								<input type="text" class="form-control" name="address" placeholder="Your Address">
+							</div>
+							<div class="form-group">
+								<label>
+									<h5>Concerned Unit Owner</h5>
+								</label>
+								<input type="text" class="form-control" name="address" placeholder="Your Address">
+							</div>
+							<div class="d-flex justify-content-center">
+								<a href="#" class="btn btn-sm btn-success"
+									style="border-radius: 10%;" onclick="myNotification();">
+									Send
+								</a>
+							</div>
+						</form>
+
+						<br>
+
+
+					</div>
+				</div>
 			</div>
 		</div>
 
